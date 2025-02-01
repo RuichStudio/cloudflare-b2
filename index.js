@@ -128,7 +128,8 @@ export default {
         // For HEAD requests Cloudflare appears to change the method on the outgoing request to GET (#18), which
         // breaks the signature, resulting in a 403. So, change all HEADs to GETs. This is not too inefficient,
         // since we won't read the body of the response if the original request was a HEAD.
-        const signedRequest = await client.sign(url.toString(), {
+        console.log(url.toString)
+            const signedRequest = await client.sign(url.toString(), {
             method: 'GET',
             headers: headers
         });
